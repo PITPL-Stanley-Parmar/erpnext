@@ -9,64 +9,94 @@
  "email_append_to": 1,
  "engine": "InnoDB",
  "field_order": [
+  "organization_lead",
   "naming_series",
+  "lead_details",
+  "users",
+  "lead_number",
+  "lead_name",
+  "description",
+  "email_id",
+  "customer_name",
+  "lead_owner",
+  "status",
+  "sub_status",
   "salutation",
+  "designation",
+  "gender",
+  "source",
+  "date",
+  "customer",
+  "campaign_name",
+  "image",
+  "contact_by",
+  "contact_date",
+  "ends_on",
+  "notes_section",
+  "notes",
+  "address_info",
+  "address_html",
+  "address_type",
+  "address_title",
+  "address_line1",
+  "address_line2",
+  "city",
+  "county",
+  "contact_html",
+  "state",
+  "country",
+  "pincode",
+  "contact_section",
+  "phone",
+  "mobile_no",
+  "fax",
+  "website",
+  "more_info",
+  "type",
+  "market_segment",
+  "industry",
+  "request_type",
+  "company",
+  "territory",
+  "language",
+  "unsubscribed",
+  "blog_subscriber",
+  "title",
+  "section_break_59",
+  "lead_contact_person_details",
+  "lead_transfer_to_section",
+  "lead_transfer",
+  "lead_transfer_user_full_name",
+  "lead_assign_to_user",
   "first_name",
   "middle_name",
   "last_name",
   "column_break_1",
-  "lead_name",
   "job_title",
-  "gender",
-  "source",
   "col_break123",
-  "lead_owner",
-  "status",
-  "customer",
-  "type",
-  "request_type",
   "contact_info_tab",
-  "email_id",
-  "website",
   "column_break_20",
-  "mobile_no",
   "whatsapp_no",
   "column_break_16",
-  "phone",
   "phone_ext",
   "organization_section",
-  "company_name",
   "no_of_employees",
   "column_break_28",
   "annual_revenue",
-  "industry",
-  "market_segment",
   "column_break_31",
-  "territory",
   "fax",
   "address_section",
-  "address_html",
   "column_break_38",
-  "city",
-  "state",
-  "country",
   "column_break2",
-  "contact_html",
   "qualification_tab",
   "qualification_status",
   "column_break_64",
   "qualified_by",
   "qualified_on",
   "other_info_tab",
-  "campaign_name",
-  "company",
   "column_break_22",
-  "language",
-  "image",
-  "title",
   "column_break_50",
   "disabled",
-  "unsubscribed",
   "blog_subscriber",
   "activities_tab",
   "open_activities_html",
@@ -74,10 +104,21 @@
   "all_activities_html",
   "notes_tab",
   "notes_html",
-  "notes",
   "dashboard_tab"
  ],
  "fields": [
+  {
+   "default": "0",
+   "fieldname": "organization_lead",
+   "fieldtype": "Check",
+   "label": "Lead is an Organization",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "lead_details",
+   "fieldtype": "Section Break",
+   "options": "fa fa-user"
+  },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
@@ -85,7 +126,7 @@
    "no_copy": 1,
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
-   "options": "CRM-LEAD-.YYYY.-",
+   "options": "Lead-.DD.-.YYYY.-",
    "set_only_once": 1
   },
   {
@@ -121,6 +162,7 @@
   {
    "fieldname": "col_break123",
    "fieldtype": "Column Break",
+   "hidden": 1,
    "width": "50%"
   },
   {
@@ -195,6 +237,7 @@
   {
    "fieldname": "contact_info_tab",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Contact Info"
   },
   {
@@ -205,7 +248,8 @@
   },
   {
    "fieldname": "column_break2",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "contact_html",
@@ -234,7 +278,8 @@
    "fieldtype": "Data",
    "label": "Fax",
    "oldfieldname": "fax",
-   "oldfieldtype": "Data"
+   "oldfieldtype": "Data",
+   "hidden": 1
   },
   {
    "fieldname": "type",
@@ -305,7 +350,8 @@
    "default": "0",
    "fieldname": "blog_subscriber",
    "fieldtype": "Check",
-   "label": "Blog Subscriber"
+   "label": "Blog Subscriber",
+   "hidden": 1
   },
   {
    "fieldname": "title",
@@ -323,151 +369,179 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "First Name",
    "mandatory_depends_on": "eval: !(doc.company_name)"
   },
   {
    "fieldname": "middle_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Middle Name"
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Last Name"
   },
   {
    "fieldname": "no_of_employees",
    "fieldtype": "Select",
    "label": "No of Employees",
+   "hidden": 1,
    "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+"
   },
   {
    "fieldname": "column_break_22",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "whatsapp_no",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "WhatsApp",
    "options": "Phone"
   },
   {
    "fieldname": "column_break_50",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_16",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "phone_ext",
    "fieldtype": "Data",
-   "label": "Phone Ext."
+   "label": "Phone Ext.",
+   "hidden": 1
   },
   {
    "collapsible": 1,
    "fieldname": "qualification_tab",
    "fieldtype": "Section Break",
-   "label": "Qualification"
+   "label": "Qualification",
+   "hidden": 1
   },
   {
    "depends_on": "eval:!doc.__islocal",
    "fieldname": "notes_tab",
    "fieldtype": "Tab Break",
-   "label": "Comments"
+   "label": "Comments",
+   "hidden": 1
   },
   {
    "collapsible": 1,
    "fieldname": "other_info_tab",
    "fieldtype": "Section Break",
-   "label": "Additional Information"
+   "label": "Additional Information",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_1",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "qualified_by",
    "fieldtype": "Link",
    "label": "Qualified By",
-   "options": "User"
+   "options": "User",
+   "hidden": 1
   },
   {
    "fieldname": "qualified_on",
    "fieldtype": "Date",
-   "label": "Qualified on"
+   "label": "Qualified on",
+   "hidden": 1
   },
   {
    "fieldname": "qualification_status",
    "fieldtype": "Select",
    "label": "Qualification Status",
+   "hidden": 1,
    "options": "Unqualified\nIn Process\nQualified"
   },
   {
    "collapsible": 1,
    "fieldname": "address_section",
    "fieldtype": "Section Break",
-   "label": "Address & Contacts"
+   "label": "Address & Contacts",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_64",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_20",
+   "hidden": 1,
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "job_title",
    "fieldtype": "Data",
-   "in_list_view": 1,
+   "hidden": 1,
    "in_standard_filter": 1,
    "label": "Job Title"
   },
   {
    "fieldname": "annual_revenue",
    "fieldtype": "Currency",
-   "label": "Annual Revenue"
+   "label": "Annual Revenue",
+   "hidden": 1
   },
   {
    "depends_on": "eval:!doc.__islocal",
    "fieldname": "activities_tab",
    "fieldtype": "Tab Break",
-   "label": "Activities"
+   "label": "Activities",
+   "hidden": 1
   },
   {
    "fieldname": "organization_section",
    "fieldtype": "Section Break",
-   "label": "Organization"
+   "label": "Organization",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_28",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_31",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "notes_html",
    "fieldtype": "HTML",
-   "label": "Notes HTML"
+   "label": "Notes HTML",
+   "hidden": 1 
   },
   {
    "fieldname": "open_activities_html",
    "fieldtype": "HTML",
-   "label": "Open Activities HTML"
+   "label": "Open Activities HTML",
+   "hidden": 1
   },
   {
    "fieldname": "all_activities_section",
    "fieldtype": "Section Break",
-   "label": "All Activities"
+   "label": "All Activities",
+   "hidden": 1
   },
   {
    "fieldname": "all_activities_html",
    "fieldtype": "HTML",
-   "label": "All Activities HTML"
+   "label": "All Activities HTML",
+   "hidden": 1
   },
   {
    "fieldname": "notes",
@@ -481,11 +555,13 @@
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
-   "label": "Disabled"
+   "label": "Disabled",
+   "hidden": 1
   },
   {
    "fieldname": "column_break_38",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "hidden": 1
   },
   {
    "fieldname": "city",
@@ -507,9 +583,217 @@
    "fieldname": "dashboard_tab",
    "fieldtype": "Tab Break",
    "label": "Connections",
-   "show_dashboard": 1
-  }
+   "show_dashboard": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "read_only_depends_on": "eval:doc.status == \"Success\" || doc.status == \"Close\""
+  },
+  {
+   "fieldname": "lead_transfer_to_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Transfer to"
+  },
+  {
+   "fieldname": "section_break_59",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "lead_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Lead Number"
+  },
+  {
+   "fieldname": "sub_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sub Status",
+   "options": "\nOn Call Discussion\nTechnical Visit\nQuotation\nFollow Up\nBudgetary  Discussion\nNegotiation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lead_transfer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Lead Transfer",
+   "options": "User",
+   "read_only_depends_on": "eval:doc.status == \"Success\" || doc.status == \"Close\"",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.status == \"Success\" || doc.status == \"Close\"||doc.status == \"Open\"|| doc.status == \"Contacted\"||doc.__islocal",
+   "fieldname": "lead_contact_person_details",
+   "fieldtype": "Table",
+   "label": "Lead Contact Person Details",
+   "options": "Lead Contact Person Details",
+   "read_only_depends_on": "eval:doc.status == \"Success\" || doc.status == \"Close\""
+  },
+  {
+   "fetch_from": "lead_transfer.full_name",
+   "fieldname": "lead_transfer_user_full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Lead Transfer User Full Name"
+  },
+  {
+   "fieldname": "lead_assign_to_user",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Lead Assign To User",
+   "options": "Lead Assign To User"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name",
+   "oldfieldname": "company_name",
+   "oldfieldtype": "Data",
+   "options": "Customer",
+   "set_only_once": 1,
+   "reqd": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "users",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "contact_by",
+   "fieldtype": "Link",
+   "label": "Next Contact By",
+   "oldfieldname": "contact_by",
+   "oldfieldtype": "Link",
+   "options": "User",
+   "width": "100px"
+  },
+  {
+   "bold": 1,
+   "fieldname": "contact_date",
+   "fieldtype": "Datetime",
+   "label": "Next Contact Date",
+   "no_copy": 1,
+   "oldfieldname": "contact_date",
+   "oldfieldtype": "Date",
+   "width": "100px"
+  },
+  {
+   "bold": 1,
+   "fieldname": "ends_on",
+   "fieldtype": "Datetime",
+   "label": "Ends On",
+   "no_copy": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Notes"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval: doc.__islocal",
+   "fieldname": "address_info",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Address & Contact",
+   "oldfieldtype": "Column Break",
+   "options": "fa fa-map-marker"
+  },
+  {
+    "default": "Billing",
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "address_type",
+    "fieldtype": "Select",
+    "label": "Address Type",
+    "options": "Billing\nShipping\nOffice\nPersonal\nPlant\nPostal\nShop\nSubsidiary\nWarehouse\nCurrent\nPermanent\nOther"
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "description": "Home, Work, etc.",
+    "fieldname": "address_title",
+    "fieldtype": "Data",
+    "label": "Address Title"
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "address_line1",
+    "fieldtype": "Data",
+    "label": "Address Line 1",
+    "mandatory_depends_on": "eval: doc.address_title && doc.address_type"
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "address_line2",
+    "fieldtype": "Data",
+    "label": "Address Line 2"
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "city",
+    "fieldtype": "Data",
+    "label": "City/Town",
+    "mandatory_depends_on": "eval: doc.address_title && doc.address_type"
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "county",
+    "fieldtype": "Data",
+    "label": "County"
+   },
+   {
+    "fieldname": "contact_html",
+    "fieldtype": "HTML",
+    "label": "Contact HTML",
+    "read_only": 1
+   },
+   {
+    "depends_on": "eval: doc.__islocal",
+    "fieldname": "pincode",
+    "fieldtype": "Data",
+    "label": "Postal Code"
+   },
+   {
+    "collapsible": 1,
+    "collapsible_depends_on": "eval: doc.__islocal",
+    "fieldname": "contact_section",
+    "fieldtype": "Section Break",
+    "hidden": 1,
+    "label": "Contact"
+   }
  ],
+ "hide_toolbar": 1,
  "icon": "fa fa-user",
  "idx": 5,
  "image_field": "image",
@@ -572,7 +856,14 @@
    "read": 1,
    "report": 1,
    "role": "Sales User"
-  }
+  },
+  {
+    "create": 1,
+    "if_owner": 1,
+    "read": 1,
+    "role": "Lead User",
+    "write": 1
+   }
  ],
  "search_fields": "lead_name,lead_owner,status",
  "sender_field": "email_id",

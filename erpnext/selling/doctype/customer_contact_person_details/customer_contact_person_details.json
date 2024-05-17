@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-17 17:30:49.811600",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "person_name",
+  "designation",
+  "department",
+  "column_break_4",
+  "primary_mobile_number",
+  "primary_email_id",
+  "contact_name",
+  "add_secondary_contact_details"
+ ],
+ "fields": [
+  {
+   "columns": 5,
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Person Name",
+   "read_only": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Division / Department",
+   "options": "Person Department"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_mobile_number",
+   "fieldtype": "Data",
+   "label": "Primary Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "primary_email_id",
+   "fieldtype": "Data",
+   "label": "Primary Email Id",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "add_secondary_contact_details",
+   "fieldtype": "Button",
+   "label": "Add Secondary Contact Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-17 17:30:49.811600",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Customer Contact Person Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
