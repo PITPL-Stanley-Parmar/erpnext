@@ -171,3 +171,29 @@ def local_country_name(country_code: str) -> str:
 	from babel import Locale
 
 	return Locale.parse(frappe.local.lang, sep="-").territories.get(country_code, country_code)
+
+@frappe.whitelist()
+def get_holiday_list_with_description(employee_id):
+    # Query the Employee doctype to get the assigned holiday list
+    assigned_holiday_list = frappe.get_value("Employee", {"employee": employee_id}, ["holiday_list"])
+
+    if assigned_holiday_list:
+        # Query the holidays directly from the specified holiday list
+        holidays = frappe.get_all(
+            "Holiday",
+            filters={"parent": assigned_holiday_list, "weekly_off": 0},
+            fields=["holiday_date", "description", "description_for_holiday"],
+        )
+
+        # Iterate through the queried holidays and add them to the list
+        holidays_list = []
+        for holiday in holidays:
+            holiday_date = holiday.get("holiday_date")
+            description = holiday.get("description")
+            description_for_holiday = holiday.get("description_for_holiday")
+            holidays_list.append({"holiday_date": holiday_date, "description": description, "description_for_holiday": description_for_holiday})
+
+        return holidays_list
+    else:
+        frappe.msgprint("No assigned holiday list for the employee.")
+        return []
